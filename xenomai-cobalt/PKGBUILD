@@ -42,6 +42,8 @@ build() {
 
   cd "${srcdir}/xenomai-3.0.3"
 
+  export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro -fPIC"
+
   mkdir build32 && cd build32
   "${srcdir}/xenomai-3.0.3/configure" --with-core=cobalt --enable-smp --enable-pshared \
     --build=i686-pc-linux-gnu --host=i686-pc-linux-gnu \
