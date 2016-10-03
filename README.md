@@ -32,9 +32,9 @@ source package to build Xenomai userspace for Cobalt Core: dual-kernel configura
 * /usr/xenomai64
 * /usr/xenomai32
 
-You will likely want to adjust your PATH, for the /bin && /demo folders.
+You may want adjust your PATH, to include the /bin && /demo folders.
 
-You likely may want to read through the documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
+Please read through the Xenomai documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
 
 NOTE: This packages depends on linux-xenomai and is useless without it.
 
@@ -45,7 +45,7 @@ source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL conf
 * /usr/xenomai64
 * /usr/xenomai32
 
-You will likely want to adjust your PATH, for the /bin && /demo folders.
+(Again!) You may want adjust your PATH, to include the /bin && /demo folders.
 
 Mercury Core must be used with a PREEMPT_RT_FULL kernel; you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
 
