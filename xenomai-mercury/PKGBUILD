@@ -1,0 +1,62 @@
+# Maintainer: Peter Mattern <pmattern at arcor dot de>
+
+pkgname=xenomai-mercury
+pkgver=3.0.3
+pkgrel=1
+pkgdesc='Xenomai: a versatile Free Software framework for implementing and migrating real-time applications, based on standard APIs or accurate emulation of proprietary RTOS interfaces, such as VxWorks and pSOS'
+arch=('i686' 'x86_64')
+url='https://xenomai.org/'
+license=('BSD')
+depends=()
+makedepends=('git' 'make')
+provides=("xenomai-mercury")
+conflicts=("xenomai-mercury")
+replaces=("xenomai-mercury")
+source=("xenomai-3.0.3.tar.bz2")
+sha256sums=('4c396b4d447efd414c4d7c0894f97ef52b4ec45c87f512c14adee981a45f0e3b')
+
+build() {
+  cd "${srcdir}/xenomai-3.0.3"
+
+  export CFLAGS="-march=native -mtune=native -Wno-error"
+  export CXXFLAGS="-march=native -mtune=native -Wno-error"
+
+  if [ "$CARCH" = "x86_64" ]; then
+      msg2 "Building Xenomai 64bit..."
+
+      # build 64bit xenomai
+
+      mkdir build64 && cd build64
+      "${srcdir}/xenomai-3.0.3/configure" --with-core=mercury --enable-smp --enable-pshared \
+      --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu \
+      --prefix=/usr/xenomai64 
+
+      make -j4
+
+      export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  fi
+
+  # build 32bit xenomai
+  msg2 "Building Xenomai 32bit..."
+
+  cd "${srcdir}/xenomai-3.0.3"
+
+  mkdir build32 && cd build32
+  "${srcdir}/xenomai-3.0.3/configure" --with-core=mercury --enable-smp --enable-pshared \
+    --build=i686-pc-linux-gnu --host=i686-pc-linux-gnu \
+    --prefix=/usr/xenomai32 
+
+  make -j4
+
+}
+
+package() {
+    msg2 "Packaging Xenomai64"
+    cd "${srcdir}/xenomai-3.0.3/build64"
+    make DESTDIR="${pkgdir}" install
+
+    msg2 "Packaging Xenomai32"
+    cd "${srcdir}/xenomai-3.0.3/build32"
+    make DESTDIR="${pkgdir}" install
+}
