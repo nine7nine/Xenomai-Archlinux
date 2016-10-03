@@ -23,6 +23,8 @@ For more information on Xenomai, go here; https://xenomai.org/start-here/
 source package to build a cobalt/xenomai linux kernel. This is the 'dual-kernel' approach to providing RT, used in Xenomai.
 Linux-xenomai must be used with the 'xenomai-cobalt' source package. (more on that below). For convenience, I have added a repo/kernel sources for this package; https://github.com/nine7nine/linux-4.1.18-xenomai ... The PKGBUILD will grab this 'pre-patched' xenomai/cobalt dual-kernel, avoiding having to manually step through applying the cobalt/ipipe patchwork.
 
+Additionally, my source package enables gcc optimizations and adds support for the BFQ io scheduler.
+
 That all said, you should still be reading through the documentation, as there is important information. For example, there are a number of different kernel parameters, etc; https://xenomai.org/installing-xenomai-3-x/
 
 # Xenomai-cobalt
