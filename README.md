@@ -1,6 +1,6 @@
 # Xenomai-Archlinux
 
-this repo contains Archlinux packages for Xenomai-3.0.3. 
+this repo contains various Archlinux source packages for Xenomai-3.0.3. 
 
 What is Xenomai about?
 
@@ -16,7 +16,7 @@ To sum up, Xenomai can help you in:
 
 For more information on Xenomai, go here; https://xenomai.org/start-here/
 
-My Xenomai repo contains several different packages;
+*** My Xenomai repo contains several different packages;
 
 # linux-xenomai: 
 
@@ -35,4 +35,4 @@ NOTE: This packages depends on linux-xenomai and is useless without it.
 
 source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL configurations. Mercury/Xenomai only requires a -rt kernel and doesn't patch the linux kernel for xenomai support. Use it with any PREEMPT_RT_FULL kernel (linux-rt in AUR). This package builds both x86_64 / i686 versions of xenomai. (for use on multilib/x86_64 systems).
 
-NOTE: Do not use linux-xenomai with this, instead install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus)
+NOTE: Do not use linux-xenomai with xenomai-mercury! ~ Instead, you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
