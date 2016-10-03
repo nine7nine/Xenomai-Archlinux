@@ -25,14 +25,28 @@ Linux-xenomai must be used with the 'xenomai-cobalt' source package. (more on th
 
 That all said, you should still be reading through the documentation, as there is important information. For example, there are a number of different kernel parameters, etc; https://xenomai.org/installing-xenomai-3-x/
 
-# xenomai-cobalt
+# Xenomai-cobalt
 
-source package to build Xenomai userspace for Cobalt Core: dual-kernel configurations. This package builds both x86_64 / i686 versions of xenomai. (for use on multilib/x86_64 systems)... You likely may want to read through the documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
+source package to build Xenomai userspace for Cobalt Core: dual-kernel configurations. This package builds both x86_64 / i686 versions of xenomai-cobalt/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
+
+/usr/xenomai64
+/usr/xenomai32
+
+You will likely want to adjust your PATH, for the /bin && /demo folders.
+
+You likely may want to read through the documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
 
 NOTE: This packages depends on linux-xenomai and is useless without it.
 
-# xenomai-mercury
+# Xenomai-mercury
 
-source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL configurations. Mercury/Xenomai only requires a -rt kernel and doesn't patch the linux kernel for xenomai support. Use it with any PREEMPT_RT_FULL kernel (linux-rt in AUR). This package builds both x86_64 / i686 versions of xenomai. (for use on multilib/x86_64 systems).
+source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL configurations. Mercury/Xenomai only requires a -rt kernel and doesn't patch the linux kernel for xenomai support. Use it with any PREEMPT_RT_FULL kernel (linux-rt in AUR). This package builds both x86_64 / i686 versions of xenomai-mercury/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
+
+/usr/xenomai64
+/usr/xenomai32
+
+You will likely want to adjust your PATH, for the /bin && /demo folders.
 
 NOTE: Do not use linux-xenomai with xenomai-mercury! ~ Instead, you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
+
+FINAL NOTE: My packages will conflict with each other, meaning; You either use 'mercury' or 'cobalt', not both. Also, I am not likely to provide any support in using Xenomai, as I am just experimenting with it - but had noticed that it isn't apckaged for Archlinux... Therefore, I decided to package it and have it available to someone who might stumble upon it! ;-)
