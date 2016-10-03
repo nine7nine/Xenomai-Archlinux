@@ -49,4 +49,6 @@ You will likely want to adjust your PATH, for the /bin && /demo folders.
 
 NOTE: Do not use linux-xenomai with xenomai-mercury! ~ Instead, you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
 
-FINAL NOTE: My packages will conflict with each other, meaning; You either use 'mercury' or 'cobalt', not both. Also, I am not likely to provide any support in using Xenomai, as I am just experimenting with it - but had noticed that it isn't apckaged for Archlinux... Therefore, I decided to package it and have it available to someone who might stumble upon it! ;-)
+FINAL NOTE: My packages will conflict with each other, meaning; You either use 'mercury' or 'cobalt'. This can be worked
+around, but currently Xenomai userspace will conflict, this could be avoided by changing the installation paths in order to 
+allow them to co-exist, but my packages don't work that way.
