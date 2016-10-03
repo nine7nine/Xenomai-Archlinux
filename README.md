@@ -29,8 +29,8 @@ That all said, you should still be reading through the documentation, as there i
 
 source package to build Xenomai userspace for Cobalt Core: dual-kernel configurations. This package builds both x86_64 / i686 versions of xenomai-cobalt/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
 
-/usr/xenomai64
-/usr/xenomai32
+* /usr/xenomai64
+* /usr/xenomai32
 
 You will likely want to adjust your PATH, for the /bin && /demo folders.
 
@@ -42,13 +42,10 @@ NOTE: This packages depends on linux-xenomai and is useless without it.
 
 source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL configurations. Mercury/Xenomai only requires a -rt kernel and doesn't patch the linux kernel for xenomai support. Use it with any PREEMPT_RT_FULL kernel (linux-rt in AUR). This package builds both x86_64 / i686 versions of xenomai-mercury/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
 
-/usr/xenomai64
-/usr/xenomai32
+* /usr/xenomai64
+* /usr/xenomai32
 
 You will likely want to adjust your PATH, for the /bin && /demo folders.
 
-NOTE: Do not use linux-xenomai with xenomai-mercury! ~ Instead, you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
+Mercury Core must be used with a PREEMPT_RT_FULL kernel; you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
 
-FINAL NOTE: My packages will conflict with each other, meaning; You either use 'mercury' or 'cobalt'. This can be worked
-around, but currently Xenomai userspace will conflict, this could be avoided by changing the installation paths in order to 
-allow them to co-exist, but my packages don't work that way.
