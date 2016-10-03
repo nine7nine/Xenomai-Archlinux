@@ -16,7 +16,7 @@ To sum up, Xenomai can help you in:
 
 For more information on Xenomai, go here; https://xenomai.org/start-here/
 
-*** My Xenomai repo contains several different packages;
+# *** My Xenomai repo contains several different packages ****
 
 # linux-xenomai: 
 
