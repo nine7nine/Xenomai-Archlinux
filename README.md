@@ -31,10 +31,8 @@ That all said, you should still be reading through the documentation, as there i
 
 source package to build Xenomai userspace for Cobalt Core: dual-kernel configurations. This package builds both x86_64 / i686 versions of xenomai-cobalt/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
 
-* /usr/xenomai64
-* /usr/xenomai32
-
-You may want adjust your PATH, to include the /bin && /demo folders.
+* /usr/xenomai/cobalt64
+* /usr/xenomai/cobalt32
 
 Please read through the Xenomai documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
 
@@ -44,10 +42,33 @@ NOTE: This packages depends on linux-xenomai and is useless without it.
 
 source package to build Xenomai userspace for Mercury Core: single-kernel configurations. Mercury Core/Xenomai only requires an -rt kernel (PREEMPT_RT_FULL) and doesn't patch the linux kernel for xenomai support, specifically. This package builds both x86_64 / i686 versions of xenomai-mercury/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
 
-* /usr/xenomai64
-* /usr/xenomai32
+* /usr/xenomai/mercury64
+* /usr/xenomai/mercury32
 
-(Again!) You may want adjust your PATH, to include the /bin && /demo folders.
+Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR). It is located in my github, here; https://github.com/nine7nine/linux-rt-plus). 
 
-Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR). It is located in my github, here; https://github.com/nine7nine/linux-rt-plus). however, I didn't make the xenomai-mercury depend on any particular kernel (mainly, because I sometimes use non-standard/local -rt packages). like I did with cobalt/linux-xenomai..
+# Compatibility
 
+You may have noticed from the above installation PATHs for Mercury and Cobalt Core/Userspace that you can actually 
+have them both installed at the same time (yes, the packages won't conflict!)... This can be very useful for testing purposes.
+For example, you can switch kernels (cobalt or PREEMPT_RT) and still have access to the correct Xenomai Userspace && libraries. Next, if you happen to have corresponding apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly simple task (ie: run the correct binary + kernel together).
+
+Please consult the documentation on building Xenomai apps; 
+
+https://xenomai.org/building-applications-with-xenomai-3-x/
+https://xenomai.org//2015/05/application-setup-and-init/
+
+NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config. ie;
+
+COBALT CORE (64 or 32 bit) && linux-4.1.18-xenomai
+* XENO_CONFIG := /usr/xenomai/cobalt64/bin/xeno-config
+* XENO_CONFIG := /usr/xenomai/cobalt32/bin/xeno-config
+
+MERCURY CORE (64 or 32 bit) && PREEMPT_RT_FULL kernel (linux-rt)
+XENO_CONFIG := /usr/xenomai/mercury64/bin/xeno-config
+XENO_CONFIG := /usr/xenomai/mercury32/bin/xeno-config
+
+A simple method might to be use a suffix on each app (or package) to distinguish between binaries/executables and which core and/or cpu architecture they are built against.
+
+This configuration definitely gives some flexibility and the installation of my Xenomai packages doesn't require any 
+special magic or extra effort to support this. 
