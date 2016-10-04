@@ -49,5 +49,5 @@ source package to build Xenomai userspace for Mercury Core: single-kernel config
 
 (Again!) You may want adjust your PATH, to include the /bin && /demo folders.
 
-Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). however, I didn't make the package depend on any particular kernel, like I did with cobalt/linux-xenomai..
+Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR). It is located in my github, here; https://github.com/nine7nine/linux-rt-plus). however, I didn't make the xenomai-mercury depend on any particular kernel (mainly, because I sometimes use non-standard/local -rt packages). like I did with cobalt/linux-xenomai..
 
