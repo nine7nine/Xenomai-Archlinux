@@ -49,5 +49,5 @@ source package to build Xenomai userspace for Mercury Core: single-kernel config
 
 (Again!) You may want adjust your PATH, to include the /bin && /demo folders.
 
-Mercury Core must be used with a PREEMPT_RT_FULL kernel; you will need to install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). Basically, any PREEMPT_RT_FULL kernel.
+Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR; https://github.com/nine7nine/linux-rt-plus). however, I didn't make the package depend on any particular kernel, like I did with cobalt/linux-xenomai..
 
