@@ -42,7 +42,7 @@ NOTE: This packages depends on linux-xenomai and is useless without it.
 
 # Xenomai-mercury
 
-source package to build Xenomai userspace for Mercury Core: PREEMPT_RT_FULL configurations. Mercury/Xenomai only requires a -rt kernel and doesn't patch the linux kernel for xenomai support. Use it with any PREEMPT_RT_FULL kernel (linux-rt in AUR). This package builds both x86_64 / i686 versions of xenomai-mercury/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
+source package to build Xenomai userspace for Mercury Core: single-kernel configurations. Mercury Core/Xenomai only requires an -rt kernel (PREEMPT_RT_FULL) and doesn't patch the linux kernel for xenomai support, specifically. This package builds both x86_64 / i686 versions of xenomai-mercury/userspace. (for use on multilib/x86_64 systems). Xenomai userspace/libraries will be installed into;
 
 * /usr/xenomai64
 * /usr/xenomai32
