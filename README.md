@@ -49,16 +49,18 @@ Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or 
 
 # Compatibility
 
-You may have noticed from the above installation PATHs for Mercury and Cobalt Core/Userspace that you can actually 
-have them both installed at the same time (yes, the packages won't conflict!)... This can be very useful for testing purposes.
-For example, you can switch kernels (cobalt or PREEMPT_RT) and still have access to the correct Xenomai Userspace && libraries. Next, if you happen to have corresponding apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly simple task (ie: run the correct binary + kernel together).
+You may have noticed from the above installation PATHs that Mercury and Cobalt Core/Userspace can be installed/co-exist on 
+the same system. (yes, the packages won't conflict!)... This can be very useful for testing purposes. For example, you can
+switch kernels (linux-xenomai or linux-rt/PREEMPT_RT) and still have access to the correct Xenomai Userspace && libraries.
+Next, if you happen to have corresponding apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly
+simple task (ie: run the correct binary, userspace and kernel together).
 
 Please consult the documentation on building Xenomai apps; 
 
 https://xenomai.org/building-applications-with-xenomai-3-x/
 https://xenomai.org//2015/05/application-setup-and-init/
 
-NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config. ie;
+NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config, when building apps. ie;
 
 COBALT CORE (64 or 32 bit) && linux-4.1.18-xenomai
 * XENO_CONFIG := /usr/xenomai/cobalt64/bin/xeno-config
@@ -68,7 +70,7 @@ MERCURY CORE (64 or 32 bit) && PREEMPT_RT_FULL kernel (linux-rt)
 XENO_CONFIG := /usr/xenomai/mercury64/bin/xeno-config
 XENO_CONFIG := /usr/xenomai/mercury32/bin/xeno-config
 
-A simple method might to be use a suffix on each app (or package) to distinguish between binaries/executables and which core and/or cpu architecture they are built against.
+A simple method might to be use a suffix on each app (or package) to distinguish between binaries/executables + Xenomai Core and/or cpu architecture they are built against/targeting...
 
 This configuration definitely gives some flexibility and the installation of my Xenomai packages doesn't require any 
 special magic or extra effort to support this. 
