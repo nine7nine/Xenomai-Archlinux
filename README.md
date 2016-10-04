@@ -34,7 +34,7 @@ source package to build Xenomai userspace for Cobalt Core: dual-kernel configura
 * /usr/xenomai/cobalt64
 * /usr/xenomai/cobalt32
 
-Please read through the Xenomai documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Docs; https://xenomai.org/installing-xenomai-3-x/
+Please read through the Xenomai documentation, as this is a basic installation and you may want to tweak the package to your own requirements. Documentation; https://xenomai.org/installing-xenomai-3-x/
 
 NOTE: This packages depends on linux-xenomai and is useless without it.
 
@@ -57,18 +57,20 @@ simple task (ie: run the correct binary, userspace and kernel together).
 
 Please consult the documentation on building Xenomai apps; 
 
-https://xenomai.org/building-applications-with-xenomai-3-x/
-https://xenomai.org//2015/05/application-setup-and-init/
+* https://xenomai.org/building-applications-with-xenomai-3-x/
+* https://xenomai.org//2015/05/application-setup-and-init/
 
 NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config, when building apps. ie;
 
 COBALT CORE (64 or 32 bit) && linux-4.1.18-xenomai
+
 * XENO_CONFIG := /usr/xenomai/cobalt64/bin/xeno-config
 * XENO_CONFIG := /usr/xenomai/cobalt32/bin/xeno-config
 
 MERCURY CORE (64 or 32 bit) && PREEMPT_RT_FULL kernel (linux-rt)
-XENO_CONFIG := /usr/xenomai/mercury64/bin/xeno-config
-XENO_CONFIG := /usr/xenomai/mercury32/bin/xeno-config
+
+* XENO_CONFIG := /usr/xenomai/mercury64/bin/xeno-config
+* XENO_CONFIG := /usr/xenomai/mercury32/bin/xeno-config
 
 A simple method might to be use a suffix on each app (or package) to distinguish between binaries/executables + Xenomai Core and/or cpu architecture they are built against/targeting...
 
