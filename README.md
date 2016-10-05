@@ -51,9 +51,9 @@ source package to build Xenomai userspace for Mercury Core: single-kernel config
 * /usr/xenomai/mercury64
 * /usr/xenomai/mercury32
 
-With Mercury Core will want an -rt kernel. ~ While you can run Mercury on mainline, Mercury is meant to be used with
-PREEMPT_RT. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR). It is located 
-in my github, here; https://github.com/nine7nine/linux-rt-plus). 
+With Mercury Core, you will likely want a PREEMPT_RT kernel. ~ While you can run Mercury on mainline-linux, Mercury is meant 
+to be used with PREEMPT_RT. You can install linux-rt, linux-rt-bfq or you can use my linux-rt_plus package (not found in AUR). 
+Linux-rt_plus source package can be found in my github, here; https://github.com/nine7nine/linux-rt-plus). 
 
 # Compatibility
 
