@@ -27,7 +27,11 @@ Additionally, my source package enables gcc optimizations and adds support for t
 
 That all said, you should still be reading through the documentation, as there is important information. For example, there are a number of different kernel parameters, etc; https://xenomai.org/installing-xenomai-3-x/
 
-IMPORTNAT NOTE: This kernel config adheres to Xenomai's recommended configs. Therefore, hyperthreading, acpi, intel_idle, cpurfreq, etc have all been disabled in my config for this kernel. That all being said; some of the benchmarks I have done are VERY impressive. Cyclictest reports extremely low latencies, with very little jitter. It should be noted though that apps need to make use of the Cobalt Core to really benefit. (read on for more info / read Xenomai's documentation).
+IMPORTNAT NOTES: 
+
+1. This kernel config adheres to Xenomai's recommended configs. Therefore, hyperthreading, acpi, intel_idle, cpurfreq, etc have all been disabled in my config for this kernel. That all being said; some of the benchmarks I have done are VERY impressive. Cyclictest reports extremely low latencies, with very little jitter. It should be noted though that apps need to make use of the Cobalt Core to really benefit. (read on for more info / read Xenomai's documentation).
+
+2. I haven't enabled every driver / feature, so you might want to run make menuconfig/xconfig to see if there is a missing feature and/or driver that you will require. however, most features and debugging have been enabled.
 
 # Xenomai-cobalt
 
