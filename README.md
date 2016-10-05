@@ -54,8 +54,8 @@ Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or 
 You may have noticed from the above installation PATHs that Mercury and Cobalt Core/Userspace can be installed/co-exist on 
 the same system. (yes, the packages won't conflict!)... This can be very useful for testing purposes. For example, you can
 switch kernels (linux-xenomai or linux-rt/PREEMPT_RT) and still have access to the correct Xenomai Userspace && libraries.
-Next, if you happen to have corresponding apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly
-simple task (ie: run the correct binary, userspace and kernel together).
+Next step; if you happen to have apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly
+trivial task (ie: run the correct binary, userspace and kernel together).
 
 Please consult the documentation on building Xenomai apps; 
 
