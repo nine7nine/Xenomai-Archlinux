@@ -86,5 +86,11 @@ Before building the app, you should export the correct PATH (cobalt 64bit exampl
 
 (then run ./configure, make, etc)
 
-This configuration definitely gives some flexibility and the installation of my Xenomai packages doesn't require special magic
-or any extra effort to support this ~ Just build your apps against the correct target, then boot between kernels and test your apps / configurations... 
+If you are testing/building against each core (mercury/cobalt) with the same app/program,  then you will need to install them to different locations. However, in some cases (like single binaries) you may be able to just add a suffix. ie; 
+
+* /usr/bin/foo_cobalt
+* /usr/bin/foo_mercury
+
+This configuration (imho) gives some flexibility and the installation of my Xenomai packages doesn't require
+special magic or any extra effort to support this ~ Just build your apps against the correct target, then boot between 
+kernels and test your apps / configurations... 
