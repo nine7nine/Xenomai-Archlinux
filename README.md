@@ -56,8 +56,10 @@ Mercury Core will need an -rt kernel. You can install linux-rt, linux-rt-bfq or 
 # Compatibility
 
 You may have noticed from the above installation PATHs that Mercury and Cobalt Core/Userspace can be installed/co-exist on 
-the same system. (yes, the packages won't conflict!)... This can be very useful for testing purposes. For example, you can
-switch kernels (linux-xenomai or linux-rt/PREEMPT_RT) and still have access to the correct Xenomai Userspace && libraries.
+the same system. (yes, the packages won't conflict!)... This can be very useful for testing/comparison purposes. For example,
+you can switch kernels (linux-xenomai or linux-rt/PREEMPT_RT) and if you have xenomai-cobalt && xenomai-mercury both installed,
+you will have access to the correct Xenomai Userspace && libraries.
+
 Next step; if you happen to have apps correctly built against each Mercury/Cobalt Core; doing comparisions is a fairly
 trivial task (ie: run the correct binary, userspace and kernel together).
 
@@ -66,7 +68,7 @@ Please consult the documentation on building Xenomai apps;
 * https://xenomai.org/building-applications-with-xenomai-3-x/
 * https://xenomai.org//2015/05/application-setup-and-init/
 
-NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config, when building apps. ie;
+NOTE: Since there are multiple xenomai core installations, you must call the correct xeno-config, when building apps. Following Xenomai's documentation on building apps (makefile example), you would substitute the correct XENO_CONFIG path;
 
 COBALT CORE (64 or 32 bit) && linux-4.1.18-xenomai
 
@@ -78,7 +80,11 @@ MERCURY CORE (64 or 32 bit) && PREEMPT_RT_FULL kernel (linux-rt)
 * XENO_CONFIG := /usr/xenomai/mercury64/bin/xeno-config
 * XENO_CONFIG := /usr/xenomai/mercury32/bin/xeno-config
 
-A simple method might to be use a suffix on each app (or package) to distinguish between binaries/executables + Xenomai Core and/or cpu architecture they are built against/targeting...
+Before building the app, you should export the correct PATH (cobalt 64bit example);
 
-This configuration definitely gives some flexibility and the installation of my Xenomai packages doesn't require any 
-special magic or extra effort to support this ~ Just build your apps against the correct target, then boot between kernel and test your apps / configurations... 
+* export PATH=/usr/xenomai/cobalt64/bin:$PATH
+
+(then run ./configure, make, etc)
+
+This configuration definitely gives some flexibility and the installation of my Xenomai packages doesn't require special magic
+or any extra effort to support this ~ Just build your apps against the correct target, then boot between kernels and test your apps / configurations... 
